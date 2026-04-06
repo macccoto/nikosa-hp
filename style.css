@@ -716,15 +716,17 @@ textarea:focus-visible {
   border-bottom: 1px solid rgba(23, 24, 75, 0.12);
 }
 
-/* LINEスタンプ：2枚を交互に表示 */
-.line-stamp-rotator {
+/* LINEスタンプ・トート：2枚を交互に表示（同じタイムラインを共用） */
+.line-stamp-rotator,
+.tote-rotator {
   position: relative;
   display: block;
   overflow: hidden;
   background: rgba(243, 226, 196, 0.35);
 }
 
-.line-stamp-rotator .line-stamp-img {
+.line-stamp-rotator .line-stamp-img,
+.tote-rotator .tote-img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -733,11 +735,13 @@ textarea:focus-visible {
   object-position: center;
 }
 
-.line-stamp-img--a {
+.line-stamp-img--a,
+.tote-img.tote-img--a {
   animation: line-stamp-swap-a 6s ease-in-out infinite;
 }
 
-.line-stamp-img--b {
+.line-stamp-img--b,
+.tote-img.tote-img--b {
   animation: line-stamp-swap-b 6s ease-in-out infinite;
 }
 
@@ -771,15 +775,19 @@ textarea:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .line-stamp-img--a,
-  .line-stamp-img--b {
+  .line-stamp-img--b,
+  .tote-img.tote-img--a,
+  .tote-img.tote-img--b {
     animation: none !important;
   }
 
-  .line-stamp-img--a {
+  .line-stamp-img--a,
+  .tote-img.tote-img--a {
     opacity: 1;
   }
 
-  .line-stamp-img--b {
+  .line-stamp-img--b,
+  .tote-img.tote-img--b {
     opacity: 0;
   }
 }

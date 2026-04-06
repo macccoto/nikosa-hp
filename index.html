@@ -565,13 +565,33 @@
             </article>
 
             <article class="product-card">
-              <img
-                class="product-img"
-                data-replace="image"
-                src="https://picsum.photos/seed/good3/720/520"
-                alt="トートバッグ（仮）"
-                loading="lazy"
-              />
+              <!-- トートバッグ：2カットを交互フェード（画像は ./assets/tote-1.png など） -->
+              <div
+                class="product-img tote-rotator"
+                role="img"
+                aria-label="オリジナルトートバッグの使用イメージ"
+              >
+                <img
+                  class="tote-img tote-img--a"
+                  data-replace="image"
+                  src="./assets/tote-1.png"
+                  alt=""
+                  width="720"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="tote-img tote-img--b"
+                  data-replace="image"
+                  src="./assets/tote-2.png"
+                  alt=""
+                  width="720"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div class="product-body">
                 <h3>トートバッグ（仮）</h3>
                 <p class="muted">A4がすっぽり。ライブやお出かけに使いやすい厚手。</p>
