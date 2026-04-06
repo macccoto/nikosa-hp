@@ -784,6 +784,97 @@ textarea:focus-visible {
   }
 }
 
+/* ステッカー：3枚を順番にフェード */
+.sticker-rotator {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: rgba(243, 226, 196, 0.25);
+}
+
+.sticker-rotator .sticker-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.sticker-img--a {
+  animation: sticker-swap-a 12s ease-in-out infinite;
+}
+
+.sticker-img--b {
+  animation: sticker-swap-b 12s ease-in-out infinite;
+}
+
+.sticker-img--c {
+  animation: sticker-swap-c 12s ease-in-out infinite;
+}
+
+@keyframes sticker-swap-a {
+  0%,
+  28% {
+    opacity: 1;
+  }
+  33%,
+  93% {
+    opacity: 0;
+  }
+  98%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sticker-swap-b {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  35%,
+  60% {
+    opacity: 1;
+  }
+  65%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sticker-swap-c {
+  0%,
+  63% {
+    opacity: 0;
+  }
+  68%,
+  93% {
+    opacity: 1;
+  }
+  98%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticker-img--a,
+  .sticker-img--b,
+  .sticker-img--c {
+    animation: none !important;
+  }
+
+  .sticker-img--a {
+    opacity: 1;
+  }
+
+  .sticker-img--b,
+  .sticker-img--c {
+    opacity: 0;
+  }
+}
+
 .product-body {
   padding: 1.05rem 1.1rem 1.15rem;
 }

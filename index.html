@@ -515,13 +515,43 @@
             </article>
 
             <article class="product-card">
-              <img
-                class="product-img"
-                data-replace="image"
-                src="https://picsum.photos/seed/good2/720/520"
-                alt="ステッカー（仮）"
-                loading="lazy"
-              />
+              <!-- ステッカー：3柄を順番にフェード（画像差し替えは ./assets/sticker-1..3.png） -->
+              <div
+                class="product-img sticker-rotator"
+                role="img"
+                aria-label="オリジナルステッカー3種の見本"
+              >
+                <img
+                  class="sticker-img sticker-img--a"
+                  data-replace="image"
+                  src="./assets/sticker-1.png"
+                  alt=""
+                  width="720"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="sticker-img sticker-img--b"
+                  data-replace="image"
+                  src="./assets/sticker-2.png"
+                  alt=""
+                  width="720"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="sticker-img sticker-img--c"
+                  data-replace="image"
+                  src="./assets/sticker-3.png"
+                  alt=""
+                  width="720"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div class="product-body">
                 <h3>ステッカー（3枚セット・仮）</h3>
                 <p class="muted">ノートやスマホに。ちょいレトロな線画デザイン。</p>
