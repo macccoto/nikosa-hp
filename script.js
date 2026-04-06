@@ -97,8 +97,6 @@
     }
   });
 
-  // 現在位置のメニュー強調
-  // - 対象セクション: navリンクのhref(#id)に対応する要素
   const sectionIds = navLinks
     .map((a) => a.getAttribute("href"))
     .filter((h) => h && h.startsWith("#") && h.length > 1)
@@ -117,41 +115,54 @@
     });
   };
 
-  if ("IntersectionObserver" in window && sections.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // 画面内に入った中で、最も上に近いものを採用
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+  // 現在位置のメニュー強調（スクロールスパイ）
+  // IntersectionObserver だと #schedule が縦に長く、他セクションへ来ても「スケジュール」のまま残りやすい。
+  // 固定ヘッダー直下の基準線 Y より「上にある最後のセクション」を現在とみなす。
+  const updateActiveNav = () => {
+    if (!sections.length) return;
 
-        if (visible.length) {
-          setCurrent(visible[0].target.id);
-        }
-      },
-      {
-        root: null,
-        // 固定ヘッダー分を考慮して、上の当たり判定を少し下げる
-        rootMargin: `-${getHeaderOffset() + 16}px 0px -55% 0px`,
-        threshold: [0.05, 0.1, 0.2],
-      }
+    const docBottom = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.clientHeight
     );
+    const scrollBottom = window.scrollY + window.innerHeight;
 
-    sections.forEach((s) => observer.observe(s));
-  } else {
-    // フォールバック: スクロール位置から雑に判定（軽いが精度はほどほど）
-    const onScroll = () => {
-      const offset = getHeaderOffset() + 24;
-      let current = sections[0]?.id;
-      sections.forEach((s) => {
-        const top = window.scrollY + s.getBoundingClientRect().top;
-        if (top - offset <= window.scrollY) current = s.id;
-      });
-      if (current) setCurrent(current);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
+    // ページ最下部付近は末尾セクションを優先（短い末尾セクション・モバイルアドレスバー対策）
+    if (scrollBottom >= docBottom - 24) {
+      setCurrent(sections[sections.length - 1].id);
+      return;
+    }
+
+    const refY = window.scrollY + getHeaderOffset() + 12;
+    let currentId = sections[0].id;
+
+    sections.forEach((s) => {
+      const topDoc = window.scrollY + s.getBoundingClientRect().top;
+      if (topDoc <= refY) currentId = s.id;
+    });
+
+    setCurrent(currentId);
+  };
+
+  let navTicking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!navTicking) {
+        navTicking = true;
+        requestAnimationFrame(() => {
+          updateActiveNav();
+          navTicking = false;
+        });
+      }
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", updateActiveNav, { passive: true });
+  window.addEventListener("load", updateActiveNav);
+  updateActiveNav();
 
   // ダミー送信ボタン（見た目だけ）
   const fakeSubmit = document.querySelector("[data-fake-submit]");
