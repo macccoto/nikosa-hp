@@ -612,26 +612,34 @@
           </header>
 
           <div class="contact-layout">
-            <form class="contact-form" aria-label="お問い合わせフォーム" onsubmit="return false;">
-              <!-- TODO: placeholder を実運用に合わせて変更 -->
+            <form
+              class="contact-form"
+              aria-label="お問い合わせフォーム"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input type="hidden" name="access_key" value="4689ad03-98f4-4f9e-801c-5b3d3f3ce7d6" />
+              <!-- 送信後に戻るページ（任意：Web3Forms ダッシュボードでも設定可） -->
+              <input type="hidden" name="redirect" value="https://macccoto.github.io/nikosa-hp/#contact" />
+
               <div class="field">
-                <label for="name">お名前</label>
-                <input id="name" name="name" type="text" placeholder="例）山田 太郎" autocomplete="name" />
+                <label for="name">お名前 <span class="required-mark" aria-hidden="true">*</span></label>
+                <input id="name" name="name" type="text" placeholder="例）山田 太郎" autocomplete="name" required />
               </div>
               <div class="field">
-                <label for="email">メールアドレス</label>
-                <input id="email" name="email" type="email" placeholder="example@mail.com" autocomplete="email" />
+                <label for="email">メールアドレス <span class="required-mark" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" placeholder="example@mail.com" autocomplete="email" required />
               </div>
               <div class="field">
-                <label for="subject">件名</label>
-                <input id="subject" name="subject" type="text" placeholder="出演依頼／取材依頼 など" />
+                <label for="subject">件名 <span class="required-mark" aria-hidden="true">*</span></label>
+                <input id="subject" name="subject" type="text" placeholder="出演依頼／取材依頼 など" required />
               </div>
               <div class="field">
-                <label for="message">お問い合わせ内容</label>
-                <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                <label for="message">お問い合わせ内容 <span class="required-mark" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
               </div>
-              <button class="btn btn-primary btn-wide" type="submit" data-fake-submit>送信（ダミー）</button>
-              <p class="tiny muted">※デモなので送信されません。必要なら送信先（フォームサービス等）を後で追加できます。</p>
+              <button class="btn btn-primary btn-wide" type="submit">送信する</button>
+              <p class="tiny muted">※ Web3Forms 経由で送信されます。しばらく返信がない場合は迷惑メールもご確認ください。</p>
             </form>
 
             <aside class="contact-side" aria-label="連絡先メモ">

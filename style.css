@@ -1003,6 +1003,11 @@ textarea:focus-visible {
   color: rgba(23, 24, 75, 0.85);
 }
 
+.required-mark {
+  color: var(--orange);
+  font-weight: 900;
+}
+
 input,
 textarea {
   width: 100%;

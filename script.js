@@ -131,13 +131,5 @@
   window.addEventListener("hashchange", updateActiveNav);
   updateActiveNav();
 
-  // ダミー送信ボタン（見た目だけ）
-  const fakeSubmit = document.querySelector("[data-fake-submit]");
-  if (fakeSubmit) {
-    fakeSubmit.addEventListener("click", () => {
-      // 実送信はしない。必要ならフォームサービス等へ差し替えてください。
-      window.alert("デモなので送信されません（見た目だけです）。");
-    });
-  }
 })();
 
