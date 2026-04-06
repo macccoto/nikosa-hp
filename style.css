@@ -101,6 +101,21 @@ a {
   transform: translateY(0);
 }
 
+/*
+  固定ヘッダー下にアンカーが隠れないよう余白を確保。
+  これで JS の pushState / 手動 scrollTo は不要になり、戻る／前进の履歴が自然になる。
+*/
+#main,
+#top,
+#home,
+#profile,
+#schedule,
+#gallery,
+#goods,
+#contact {
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
 /* ===== Header ===== */
 .site-header {
   position: sticky;

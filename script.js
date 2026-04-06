@@ -1,8 +1,8 @@
 /*
   script.js
   - ハンバーガーメニュー開閉
-  - スムーススクロール
-  - 現在位置のメニュー強調（軽量: IntersectionObserver）
+  - 現在位置のメニュー強調（スクロール位置ベース）
+  - ページ内リンクはブラウザ標準の # ジャンプ（style.css の scroll-margin-top でヘッダー回避）
 */
 
 (() => {
@@ -58,44 +58,10 @@
     });
   });
 
-  // スムーススクロール（CSSのscroll-behaviorが効かない環境/微調整用）
-  // - 固定ヘッダーの高さ分だけオフセット
   const getHeaderOffset = () => {
     const h = header ? header.getBoundingClientRect().height : 0;
     return Math.max(0, Math.round(h));
   };
-
-  const scrollToHash = (hash) => {
-    const id = hash.replace("#", "");
-    if (!id) return;
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    const top = window.scrollY + el.getBoundingClientRect().top - getHeaderOffset() - 10;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
-
-  // 同一ページ内リンクのみ補正スクロール
-  document.addEventListener("click", (e) => {
-    const target = e.target instanceof Element ? e.target.closest('a[href^="#"]') : null;
-    if (!target) return;
-
-    const href = target.getAttribute("href");
-    if (!href || href === "#") return;
-
-    // 既定のジャンプを抑えて、オフセット付きでスクロール
-    e.preventDefault();
-    history.pushState(null, "", href);
-    scrollToHash(href);
-  });
-
-  // 初期ロードでハッシュがあれば位置補正
-  window.addEventListener("load", () => {
-    if (location.hash) {
-      // すぐ動かすと画像ロード等でずれるので少し待つ
-      window.setTimeout(() => scrollToHash(location.hash), 50);
-    }
-  });
 
   const sectionIds = navLinks
     .map((a) => a.getAttribute("href"))
@@ -162,6 +128,7 @@
 
   window.addEventListener("resize", updateActiveNav, { passive: true });
   window.addEventListener("load", updateActiveNav);
+  window.addEventListener("hashchange", updateActiveNav);
   updateActiveNav();
 
   // ダミー送信ボタン（見た目だけ）
