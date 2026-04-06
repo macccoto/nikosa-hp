@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="芸人コンビ・アーティスト・タレント向けの、明るくポップな公式ホームページ（ダミー版）"
+    />
+
+    <!--
+      編集ガイド（初心者向け）
+      - サイト名/ロゴ: ヘッダーの .logo のテキスト
+      - キャッチコピー: #home の <h1>
+      - 画像差し替え: data-replace="image" が付いた <img> の src / alt
+      - SNSリンク: data-replace="link" が付いた <a> の href
+      - スケジュール: #schedule の <li> を追加/修正
+      - ギャラリー: #gallery の .video-card を追加/修正
+      - グッズ: #goods の .product-card を追加/修正
+    -->
+
+    <title>にこさ（仮） | 公式サイト</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="logo" href="#home" aria-label="ホームへ">
+          <!-- TODO: サイト名に差し替え -->
+          <span class="logo-mark" aria-hidden="true">★</span>
+          にこさ（仮）
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-label="メニューを開く"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          data-menu-button
+        >
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="グローバルメニュー" data-site-nav>
+          <ul>
+            <li><a href="#home" data-nav-link>ホーム</a></li>
+            <li><a href="#profile" data-nav-link>プロフィール</a></li>
+            <li><a href="#schedule" data-nav-link>スケジュール</a></li>
+            <li><a href="#gallery" data-nav-link>ギャラリー</a></li>
+            <li><a href="#goods" data-nav-link>グッズ</a></li>
+            <li><a href="#contact" data-nav-link>お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ===== HOME / HERO ===== -->
+      <section id="home" class="section hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="badge">OFFICIAL SITE</p>
+            <h1 class="hero-title-latin" lang="en">TOSHINOSANICOSADE</h1>
+            <p class="hero-tagline">
+              ビクターミュージックアーツ所属<br />
+              姉妹コンビ【にこさ】
+            </p>
+            <p class="lead">
+              歳の差2こ差で「にこさ」です！<br />
+              姉（金髪）のすぐると妹（おかっぱ）あたるの、芸人として売れるまでのヒストリーになるような、<br />
+              自分たちのやりたかったことをやっちゃうような、先輩や仲間と絡んでなんかやっちゃうような。<br />
+              そんなワクワク、ニコニコできるチャンネルを目指しています！
+            </p>
+
+            <div class="hero-cta">
+              <!-- TODO: SNSリンクに差し替え（href） -->
+              <a
+                class="btn btn-primary"
+                href="https://www.instagram.com/niconiconico_sa/"
+                data-replace="link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                最新投稿を見る
+              </a>
+              <a class="btn btn-ghost" href="#contact">お仕事のご相談</a>
+            </div>
+
+            <ul class="hero-chips" aria-label="ポイント">
+              <li>ポップ＆レトロ</li>
+              <li>レスポンシブ</li>
+              <li>更新しやすい</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <figure class="hero-frame">
+              <!-- TODO: メインビジュアル画像に差し替え -->
+              <img
+                data-replace="image"
+                src="https://picsum.photos/seed/pop-hero/980/720"
+                alt="メインビジュアル（仮）"
+                loading="lazy"
+                width="980"
+                height="720"
+              />
+              <figcaption class="hero-caption">
+                <!-- TODO: 一言キャプション（任意） -->
+                「今週のおすすめ：新ネタ／新曲／出演情報」
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROFILE ===== -->
+      <section id="profile" class="section section-profile">
+        <div class="container">
+          <header class="section-head">
+            <h2>プロフィール</h2>
+            <p class="muted">
+              姉妹コンビ「にこさ」。笑いとあたたかさを届けるため、ライブ・配信・地域イベントで活動中です。
+            </p>
+          </header>
+
+          <div class="profile-layout">
+            <article class="profile-card">
+              <div class="profile-top">
+                <img
+                  class="avatar"
+                  data-replace="image"
+                  src="./assets/sister.jpg"
+                  alt="姉メンバー写真"
+                  loading="lazy"
+                  width="320"
+                  height="320"
+                />
+                <div>
+                  <h3>すぐる（姉）</h3>
+                  <p class="role">左担当</p>
+                </div>
+              </div>
+              <dl class="kv">
+                <div><dt>誕生日</dt><dd>1987年8月1日</dd></div>
+                <div><dt>血液型</dt><dd>AB型</dd></div>
+                <div><dt>出身地</dt><dd>千葉県</dd></div>
+                <div>
+                  <dt>趣味</dt>
+                  <dd>カラオケ、居酒屋巡り、DIY、ギター、サスペンスドラマ鑑賞</dd>
+                </div>
+                <div>
+                  <dt>特技</dt>
+                  <dd>
+                    剣道（五段・元千葉代表）、韓国語（留学経験あり）、動画撮影・編集（元AD）、
+                    サスペンスのワンシーンを見て何のドラマか当てられる
+                  </dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="profile-card">
+              <div class="profile-top">
+                <img
+                  class="avatar"
+                  data-replace="image"
+                  src="./assets/sister.jpg"
+                  alt="あたる（妹）写真"
+                  loading="lazy"
+                  width="320"
+                  height="320"
+                />
+                <div>
+                  <h3>あたる（妹）</h3>
+                  <p class="role">右担当</p>
+                </div>
+              </div>
+              <dl class="kv">
+                <div><dt>誕生日</dt><dd>1990年3月28日</dd></div>
+                <div><dt>血液型</dt><dd>B型</dd></div>
+                <div><dt>出身地</dt><dd>千葉県</dd></div>
+                <div>
+                  <dt>趣味</dt>
+                  <dd>
+                    サ活、岩盤浴、読書、カラオケ、ドラマ鑑賞、お酒、スポーツ観戦、喫茶店巡り、お城巡り、ゴルフ
+                  </dd>
+                </div>
+                <div>
+                  <dt>特技</dt>
+                  <dd>
+                    剣道（四段・元千葉県1位）、子どもに好かれる、どこでも寝られる、
+                    爪楊枝を唇の下に最高10本はさめる、竹刀のツルでメロディを奏でる
+                  </dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ACTIVITIES + SCHEDULE ===== -->
+      <section id="schedule" class="section section-activity">
+        <div class="container">
+          <header class="section-head">
+            <h2>活動紹介 / スケジュール</h2>
+            <p class="muted">
+              🎙 にこさってこんな感じ 🎙
+            </p>
+          </header>
+
+          <div class="activity-layout">
+            <article class="activity-card">
+              <h3>こんな感じで活動しています</h3>
+              <p class="muted">
+                漫才、コントを修行しながら、笑いの道をゆっくり爆進中！
+                都内でライブ活動をしながら、YouTubeとラジオトークを毎週更新中。
+                ラジオやYouTubeは、週の楽しみのひとつになれたらうれしいです☺
+              </p>
+              <p class="muted">
+                これからは地元のイベントやお祭りにも出演していきたいと思っているので、
+                お仕事やご依頼など、お気軽にお声がけください。
+              </p>
+
+              <div class="note">
+                <p class="note-title">略歴</p>
+                <ul class="bullet">
+                  <li>2022年12月：にこさ結成、活動開始</li>
+                  <li>2023年5月：ビクターミュージックアーツに所属</li>
+                  <li>2023年11月：M-1グランプリ2023にて2回戦進出</li>
+                  <li>2024年：M-1、THE W、キングオブコント1回戦敗退</li>
+                  <li>2025年：under 5 Award 2025 出場</li>
+                </ul>
+              </div>
+            </article>
+
+            <aside class="schedule-card" aria-label="今後の予定">
+              <div class="schedule-head">
+                <h3>直近スケジュール</h3>
+                <a class="mini-link" href="#contact">出演依頼はこちら</a>
+              </div>
+              <ol class="schedule-list">
+                <!-- TODO: 日付/内容/場所を差し替え。行を増やしてOK -->
+                <li>
+                  <span class="date">4/20</span>
+                  <span class="title">トーク＆ネタライブ（仮）</span>
+                  <span class="place">渋谷・小箱</span>
+                </li>
+                <li>
+                  <span class="date">5/03</span>
+                  <span class="title">フェス出演（仮）</span>
+                  <span class="place">千葉・海辺ステージ</span>
+                </li>
+                <li>
+                  <span class="date">5/18</span>
+                  <span class="title">新企画配信スタート</span>
+                  <span class="place">YouTube</span>
+                </li>
+                <li>
+                  <span class="date">6/01</span>
+                  <span class="title">イベント司会（仮）</span>
+                  <span class="place">都内</span>
+                </li>
+              </ol>
+              <p class="tiny muted">※ここは静的表示です（送信/予約機能はありません）。</p>
+            </aside>
+          </div>
+
+          <!-- ===== SNS ===== -->
+          <div class="sns-block" aria-label="SNS一覧">
+            <h3 class="sns-title">SNS 各種 発信中</h3>
+            <div class="sns-grid">
+              <!-- TODO: 各SNSの href を差し替え -->
+              <article class="sns-card sns-x">
+                <div class="sns-icon" aria-hidden="true">
+                  <svg class="icon-svg" viewBox="0 0 24 24" role="img" aria-label="X">
+                    <path
+                      d="M18.901 1.153h3.68l-8.04 9.19 9.454 12.504H16.59l-5.8-7.584-6.64 7.584H.47l8.6-9.829L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.29 19.498h2.04L6.486 3.234H4.298z"
+                    ></path>
+                  </svg>
+                </div>
+                <h4>X</h4>
+                <p class="muted">最新の告知／近況</p>
+                <a
+                  class="btn btn-small"
+                  href="https://twitter.com/niconiconico_sa"
+                  data-replace="link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  フォロー
+                </a>
+              </article>
+              <article class="sns-card sns-ig">
+                <div class="sns-icon" aria-hidden="true">
+                  <svg class="icon-svg" viewBox="0 0 24 24" role="img" aria-label="Instagram">
+                    <path
+                      d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm9.35 1.5a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"
+                    ></path>
+                  </svg>
+                </div>
+                <h4>Instagram</h4>
+                <p class="muted">写真／日常</p>
+                <a
+                  class="btn btn-small"
+                  href="https://www.instagram.com/niconiconico_sa/"
+                  data-replace="link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  フォロー
+                </a>
+              </article>
+              <article class="sns-card sns-yt">
+                <div class="sns-icon" aria-hidden="true">
+                  <svg class="icon-svg" viewBox="0 0 24 24" role="img" aria-label="YouTube">
+                    <path
+                      d="M21.6 8.3a3.1 3.1 0 0 0-2.2-2.2C17.5 5.6 12 5.6 12 5.6s-5.5 0-7.4.5A3.1 3.1 0 0 0 2.4 8.3 32 32 0 0 0 2 12a32 32 0 0 0 .4 3.7 3.1 3.1 0 0 0 2.2 2.2c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 22 12a32 32 0 0 0-.4-3.7ZM10.2 15.2V8.8l5.6 3.2-5.6 3.2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <h4>YouTube</h4>
+                <p class="muted">コント／企画</p>
+                <a
+                  class="btn btn-small"
+                  href="https://www.youtube.com/@niconiconicosassa"
+                  data-replace="link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  見る
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== GALLERY ===== -->
+      <section id="gallery" class="section section-gallery">
+        <div class="container">
+          <header class="section-head">
+            <h2>ギャラリー</h2>
+            <p class="muted">
+              <!-- TODO: 説明文に差し替え -->
+              動画サムネイル風カード（ダミー）。実際の埋め込みは後で追加できます。
+            </p>
+          </header>
+
+          <div class="video-grid">
+            <!-- TODO: 6枚のサムネを差し替え（img src） -->
+            <article class="video-card">
+              <a
+                class="video-thumb"
+                href="https://www.youtube.com/watch?v=oShhZ0P8gn0"
+                data-replace="link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img
+                  data-replace="image"
+                  src="https://i.ytimg.com/vi/oShhZ0P8gn0/hqdefault.jpg"
+                  alt="おすすめ動画1"
+                  loading="lazy"
+                />
+                <span class="play" aria-hidden="true"></span>
+                <span class="video-label">おすすめ動画 1</span>
+              </a>
+            </article>
+            <article class="video-card">
+              <a
+                class="video-thumb"
+                href="https://www.youtube.com/watch?v=MiUZDD9gP54"
+                data-replace="link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img
+                  data-replace="image"
+                  src="https://i.ytimg.com/vi/MiUZDD9gP54/hqdefault.jpg"
+                  alt="おすすめ動画2"
+                  loading="lazy"
+                />
+                <span class="play" aria-hidden="true"></span>
+                <span class="video-label">おすすめ動画 2</span>
+              </a>
+            </article>
+            <article class="video-card">
+              <a
+                class="video-thumb"
+                href="https://www.youtube.com/watch?v=a5BzIyqk2bA"
+                data-replace="link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img
+                  data-replace="image"
+                  src="https://i.ytimg.com/vi/a5BzIyqk2bA/hqdefault.jpg"
+                  alt="おすすめ動画3"
+                  loading="lazy"
+                />
+                <span class="play" aria-hidden="true"></span>
+                <span class="video-label">おすすめ動画 3</span>
+              </a>
+            </article>
+            <article class="video-card">
+              <a
+                class="video-thumb"
+                href="https://www.youtube.com/watch?v=LLPR0Py2a8E"
+                data-replace="link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img
+                  data-replace="image"
+                  src="https://i.ytimg.com/vi/LLPR0Py2a8E/hqdefault.jpg"
+                  alt="おすすめ動画4"
+                  loading="lazy"
+                />
+                <span class="play" aria-hidden="true"></span>
+                <span class="video-label">おすすめ動画 4</span>
+              </a>
+            </article>
+            <article class="video-card">
+              <a
+                class="video-thumb"
+                href="https://www.youtube.com/watch?v=mw1y_QBXgK4"
+                data-replace="link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img
+                  data-replace="image"
+                  src="https://i.ytimg.com/vi/mw1y_QBXgK4/hqdefault.jpg"
+                  alt="おすすめ動画5"
+                  loading="lazy"
+                />
+                <span class="play" aria-hidden="true"></span>
+                <span class="video-label">おすすめ動画 5</span>
+              </a>
+            </article>
+            <article class="video-card">
+              <a
+                class="video-thumb"
+                href="https://www.youtube.com/watch?v=9SZiz2B80Xc"
+                data-replace="link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img
+                  data-replace="image"
+                  src="https://i.ytimg.com/vi/9SZiz2B80Xc/hqdefault.jpg"
+                  alt="おすすめ動画6"
+                  loading="lazy"
+                />
+                <span class="play" aria-hidden="true"></span>
+                <span class="video-label">おすすめ動画 6</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== GOODS ===== -->
+      <section id="goods" class="section section-goods">
+        <div class="container">
+          <header class="section-head">
+            <h2>グッズ</h2>
+            <p class="muted">
+              <!-- TODO: 説明文に差し替え -->
+              まずは“見せ方”だけ。購入ボタンはダミーリンクです。
+            </p>
+          </header>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <!-- LINEスタンプ：2シートを交互フェード（画像差し替えは ./assets/line-stamp-1.png など） -->
+              <div
+                class="product-img line-stamp-rotator"
+                role="img"
+                aria-label="LINEスタンプ（ちびキャラ版とハトコス版）の見本"
+              >
+                <img
+                  class="line-stamp-img line-stamp-img--a"
+                  data-replace="image"
+                  src="./assets/line-stamp-1.png"
+                  alt=""
+                  width="720"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="line-stamp-img line-stamp-img--b"
+                  data-replace="image"
+                  src="./assets/line-stamp-2.png"
+                  alt=""
+                  width="720"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="product-body">
+                <h3>LINEスタンプ（仮）</h3>
+                <p class="muted">日常で使える一言が多め。テンション上げたい時に。</p>
+                <div class="price-row">
+                  <span class="price">¥120</span>
+                  <a class="btn btn-small btn-primary" href="https://example.com" data-replace="link" target="_blank" rel="noreferrer noopener">
+                    購入
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <img
+                class="product-img"
+                data-replace="image"
+                src="https://picsum.photos/seed/good2/720/520"
+                alt="ステッカー（仮）"
+                loading="lazy"
+              />
+              <div class="product-body">
+                <h3>ステッカー（3枚セット・仮）</h3>
+                <p class="muted">ノートやスマホに。ちょいレトロな線画デザイン。</p>
+                <div class="price-row">
+                  <span class="price">¥500</span>
+                  <a class="btn btn-small btn-primary" href="https://example.com" data-replace="link" target="_blank" rel="noreferrer noopener">
+                    購入
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <img
+                class="product-img"
+                data-replace="image"
+                src="https://picsum.photos/seed/good3/720/520"
+                alt="トートバッグ（仮）"
+                loading="lazy"
+              />
+              <div class="product-body">
+                <h3>トートバッグ（仮）</h3>
+                <p class="muted">A4がすっぽり。ライブやお出かけに使いやすい厚手。</p>
+                <div class="price-row">
+                  <span class="price">¥2,000</span>
+                  <a class="btn btn-small btn-primary" href="https://example.com" data-replace="link" target="_blank" rel="noreferrer noopener">
+                    購入
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section id="contact" class="section section-contact">
+        <div class="container">
+          <header class="section-head">
+            <h2>お問い合わせ</h2>
+            <p class="muted">送信機能はありません（見た目のみ）。</p>
+          </header>
+
+          <div class="contact-layout">
+            <form class="contact-form" aria-label="お問い合わせフォーム" onsubmit="return false;">
+              <!-- TODO: placeholder を実運用に合わせて変更 -->
+              <div class="field">
+                <label for="name">お名前</label>
+                <input id="name" name="name" type="text" placeholder="例）山田 太郎" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="email">メールアドレス</label>
+                <input id="email" name="email" type="email" placeholder="example@mail.com" autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="subject">件名</label>
+                <input id="subject" name="subject" type="text" placeholder="出演依頼／取材依頼 など" />
+              </div>
+              <div class="field">
+                <label for="message">お問い合わせ内容</label>
+                <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください"></textarea>
+              </div>
+              <button class="btn btn-primary btn-wide" type="submit" data-fake-submit>送信（ダミー）</button>
+              <p class="tiny muted">※デモなので送信されません。必要なら送信先（フォームサービス等）を後で追加できます。</p>
+            </form>
+
+            <aside class="contact-side" aria-label="連絡先メモ">
+              <div class="info-card">
+                <h3>💎 にこさにできること＆ご依頼について</h3>
+                <p class="muted">
+                  姉妹コンビ・にこさ。お呼びとあらばどこへでも！
+                  イベント出演、司会、企画コラボなど、「にこさで盛り上げたい！」という方は、
+                  ぜひお気軽にご連絡ください。
+                </p>
+                <p class="muted">
+                  ■ 初めての方へ<br />
+                  出演料は、イベント1本 2,530円（税込）＋交通費等（実費）で承っております。<br />
+                  ※内容や回数によってはご相談も可能です。
+                </p>
+                <p class="muted">
+                  🟠 子ども向けイベント・地域密着も大歓迎！<br />
+                  まだまだ勉強中の私たちですが、一緒に楽しい時間、あたたかい場所を作っていけたらうれしいです✨<br />
+                  「こんなことできる？」という、ざっくりしたご相談も大歓迎です😘
+                </p>
+                <div class="info-row">
+                  <span class="k">メール</span>
+                  <a class="link" href="mailto:your@email.com" data-replace="link">your@email.com</a>
+                </div>
+                <div class="info-row">
+                  <span class="k">受付時間</span>
+                  <span class="v">平日 10:00–18:00（目安）</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <p class="footer-brand">
+            <span class="logo-mark" aria-hidden="true">★</span>
+            にこさ（仮）
+          </p>
+          <p class="tiny muted">© 2026 にこさ（仮）. All rights reserved.</p>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-sns" aria-label="SNSリンク">
+            <!-- TODO: SNSリンク差し替え -->
+            <a
+              class="sns-mini"
+              href="https://twitter.com/niconiconico_sa"
+              data-replace="link"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="X"
+              ><svg class="icon-svg" viewBox="0 0 24 24" role="img" aria-label="X">
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19 9.454 12.504H16.59l-5.8-7.584-6.64 7.584H.47l8.6-9.829L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.29 19.498h2.04L6.486 3.234H4.298z"
+                ></path></svg
+            ></a
+            >
+            <a
+              class="sns-mini"
+              href="https://www.instagram.com/niconiconico_sa/"
+              data-replace="link"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Instagram"
+              ><svg class="icon-svg" viewBox="0 0 24 24" role="img" aria-label="Instagram">
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm9.35 1.5a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"
+                ></path></svg
+            ></a
+            >
+            <a
+              class="sns-mini"
+              href="https://www.youtube.com/@niconiconicosassa"
+              data-replace="link"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="YouTube"
+              ><svg class="icon-svg" viewBox="0 0 24 24" role="img" aria-label="YouTube">
+                <path
+                  d="M21.6 8.3a3.1 3.1 0 0 0-2.2-2.2C17.5 5.6 12 5.6 12 5.6s-5.5 0-7.4.5A3.1 3.1 0 0 0 2.4 8.3 32 32 0 0 0 2 12a32 32 0 0 0 .4 3.7 3.1 3.1 0 0 0 2.2 2.2c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 22 12a32 32 0 0 0-.4-3.7ZM10.2 15.2V8.8l5.6 3.2-5.6 3.2Z"
+                ></path></svg
+            ></a
+            >
+          </div>
+
+          <a class="privacy" href="#top">プライバシーポリシー（仮）</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="backdrop" data-backdrop hidden></div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
