@@ -832,6 +832,16 @@ textarea:focus-visible {
   background: rgba(255, 243, 109, 0.8);
 }
 
+.sns-link-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.sns-link-list .btn {
+  width: 100%;
+  justify-content: center;
+}
+
 /* ===== Goods ===== */
 .section-goods {
   background: linear-gradient(180deg, rgba(255, 183, 213, 0.38), rgba(255, 255, 255, 0));
@@ -860,7 +870,7 @@ textarea:focus-visible {
   border-bottom: 1px solid rgba(23, 24, 75, 0.12);
 }
 
-/* LINEスタンプ・トート：2枚を交互に表示（同じタイムラインを共用） */
+/* LINEスタンプ・トート：複数画像を順番に表示 */
 .line-stamp-rotator,
 .tote-rotator {
   position: relative;
@@ -879,14 +889,24 @@ textarea:focus-visible {
   object-position: center;
 }
 
-.line-stamp-img--a,
-.tote-img.tote-img--a {
+.line-stamp-img--a {
   animation: line-stamp-swap-a 6s ease-in-out infinite;
 }
 
-.line-stamp-img--b,
-.tote-img.tote-img--b {
+.line-stamp-img--b {
   animation: line-stamp-swap-b 6s ease-in-out infinite;
+}
+
+.tote-img--a {
+  animation: tote-swap-a 12s ease-in-out infinite;
+}
+
+.tote-img--b {
+  animation: tote-swap-b 12s ease-in-out infinite;
+}
+
+.tote-img--c {
+  animation: tote-swap-c 12s ease-in-out infinite;
 }
 
 @keyframes line-stamp-swap-a {
@@ -917,26 +937,73 @@ textarea:focus-visible {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .line-stamp-img--a,
-  .line-stamp-img--b,
-  .tote-img.tote-img--a,
-  .tote-img.tote-img--b {
-    animation: none !important;
-  }
-
-  .line-stamp-img--a,
-  .tote-img.tote-img--a {
+@keyframes tote-swap-a {
+  0%,
+  28% {
     opacity: 1;
   }
+  33%,
+  93% {
+    opacity: 0;
+  }
+  98%,
+  100% {
+    opacity: 1;
+  }
+}
 
-  .line-stamp-img--b,
-  .tote-img.tote-img--b {
+@keyframes tote-swap-b {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  35%,
+  60% {
+    opacity: 1;
+  }
+  65%,
+  100% {
     opacity: 0;
   }
 }
 
-/* ステッカー：3枚を順番にフェード */
+@keyframes tote-swap-c {
+  0%,
+  63% {
+    opacity: 0;
+  }
+  68%,
+  93% {
+    opacity: 1;
+  }
+  98%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-stamp-img--a,
+  .line-stamp-img--b,
+  .tote-img--a,
+  .tote-img--b,
+  .tote-img--c {
+    animation: none !important;
+  }
+
+  .line-stamp-img--a,
+  .tote-img--a {
+    opacity: 1;
+  }
+
+  .line-stamp-img--b,
+  .tote-img--b,
+  .tote-img--c {
+    opacity: 0;
+  }
+}
+
+/* ステッカー：4枚を順番にフェード */
 .sticker-rotator {
   position: relative;
   display: block;
@@ -954,27 +1021,30 @@ textarea:focus-visible {
 }
 
 .sticker-img--a {
-  animation: sticker-swap-a 12s ease-in-out infinite;
+  animation: sticker-swap-a 16s ease-in-out infinite;
 }
 
 .sticker-img--b {
-  animation: sticker-swap-b 12s ease-in-out infinite;
+  animation: sticker-swap-b 16s ease-in-out infinite;
 }
 
 .sticker-img--c {
-  animation: sticker-swap-c 12s ease-in-out infinite;
+  animation: sticker-swap-c 16s ease-in-out infinite;
+}
+
+.sticker-img--d {
+  animation: sticker-swap-d 16s ease-in-out infinite;
 }
 
 @keyframes sticker-swap-a {
   0%,
-  28% {
+  20% {
     opacity: 1;
   }
-  33%,
-  93% {
+  25%,
+  95% {
     opacity: 0;
   }
-  98%,
   100% {
     opacity: 1;
   }
@@ -982,14 +1052,14 @@ textarea:focus-visible {
 
 @keyframes sticker-swap-b {
   0%,
-  30% {
+  20% {
     opacity: 0;
   }
-  35%,
-  60% {
+  25%,
+  45% {
     opacity: 1;
   }
-  65%,
+  50%,
   100% {
     opacity: 0;
   }
@@ -997,14 +1067,28 @@ textarea:focus-visible {
 
 @keyframes sticker-swap-c {
   0%,
-  63% {
+  45% {
     opacity: 0;
   }
-  68%,
-  93% {
+  50%,
+  70% {
     opacity: 1;
   }
-  98%,
+  75%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sticker-swap-d {
+  0%,
+  70% {
+    opacity: 0;
+  }
+  75%,
+  95% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
   }
@@ -1013,7 +1097,8 @@ textarea:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .sticker-img--a,
   .sticker-img--b,
-  .sticker-img--c {
+  .sticker-img--c,
+  .sticker-img--d {
     animation: none !important;
   }
 
@@ -1022,7 +1107,8 @@ textarea:focus-visible {
   }
 
   .sticker-img--b,
-  .sticker-img--c {
+  .sticker-img--c,
+  .sticker-img--d {
     opacity: 0;
   }
 }
