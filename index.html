@@ -14,8 +14,7 @@
       - キャッチコピー: #home の <h1>
       - 画像差し替え: data-replace="image" が付いた <img> の src / alt
       - SNSリンク: data-replace="link" が付いた <a> の href
-      - スケジュール: #schedule の <li> を追加/修正
-      - ギャラリー: #gallery の .video-card を追加/修正
+      - スケジュール: NEWS の TimeTree 埋め込みを更新
       - グッズ: #goods の .product-card を追加/修正
     -->
 
@@ -50,7 +49,6 @@
             <li><a href="#news" data-nav-link>NEWS</a></li>
             <li><a href="#profile" data-nav-link>プロフィール</a></li>
             <li><a href="#schedule" data-nav-link>スケジュール</a></li>
-            <li><a href="#gallery" data-nav-link>ギャラリー</a></li>
             <li><a href="#goods" data-nav-link>グッズ</a></li>
             <li><a href="#contact" data-nav-link>Contact / Booking</a></li>
           </ul>
@@ -91,7 +89,6 @@
               <a class="hero-subnav-link" href="#news">NEWS</a>
               <a class="hero-subnav-link" href="#profile">プロフィール</a>
               <a class="hero-subnav-link" href="#schedule">スケジュール</a>
-              <a class="hero-subnav-link" href="#gallery">ギャラリー</a>
               <a class="hero-subnav-link" href="#goods">グッズ</a>
             </nav>
           </div>
@@ -134,16 +131,40 @@
         <div class="container">
           <header class="section-head">
             <h2>NEWS</h2>
-            <p class="muted">X（旧Twitter）の最新投稿を自動で表示します。</p>
+            <p class="muted">Instagramの最新情報とTimeTreeの出演予定をまとめて確認できます。</p>
           </header>
 
-          <div class="news-card">
-            <a
-              class="twitter-timeline"
-              href="https://twitter.com/niconiconico_sa?ref_src=twsrc%5Etfw"
-            >
-              Tweets by niconiconico_sa
-            </a>
+          <div class="embed-grid">
+            <article class="embed-card">
+              <div class="embed-card-head">
+                <h3>Instagram</h3>
+                <a class="mini-link" href="https://instagram.com/niconiconico_sa" target="_blank" rel="noreferrer noopener">
+                  Instagramで見る
+                </a>
+              </div>
+              <iframe
+                class="embed-frame embed-frame-instagram"
+                src="https://www.instagram.com/niconiconico_sa/embed"
+                title="にこさ公式Instagram"
+                loading="lazy"
+                allowtransparency="true"
+              ></iframe>
+            </article>
+
+            <article class="embed-card">
+              <div class="embed-card-head">
+                <h3>TimeTree</h3>
+                <a class="mini-link" href="https://timetreeapp.com/public_calendars/nicosa_vic" target="_blank" rel="noreferrer noopener">
+                  TimeTreeで見る
+                </a>
+              </div>
+              <iframe
+                class="embed-frame embed-frame-timetree"
+                src="https://timetreeapp.com/public_calendars/nicosa_vic/embed"
+                title="にこさ公開カレンダー"
+                loading="lazy"
+              ></iframe>
+            </article>
           </div>
         </div>
       </section>
@@ -245,11 +266,11 @@
         </div>
       </section>
 
-      <!-- ===== ACTIVITIES + SCHEDULE ===== -->
+      <!-- ===== ACTIVITIES ===== -->
       <section id="schedule" class="section section-activity">
         <div class="container">
           <header class="section-head">
-            <h2>活動紹介 / スケジュール</h2>
+            <h2>活動紹介</h2>
             <p class="muted">
               🎙 にこさってこんな感じ 🎙
             </p>
@@ -269,36 +290,6 @@
               </p>
             </article>
 
-            <aside class="schedule-card" aria-label="今後の予定">
-              <div class="schedule-head">
-                <h3>直近スケジュール</h3>
-                <a class="mini-link" href="#contact">Contact / Booking</a>
-              </div>
-              <ol class="schedule-list">
-                <!-- TODO: 日付/内容/場所を差し替え。行を増やしてOK -->
-                <li>
-                  <span class="date">4/20</span>
-                  <span class="title">トーク＆ネタライブ（仮）</span>
-                  <span class="place">渋谷・小箱</span>
-                </li>
-                <li>
-                  <span class="date">5/03</span>
-                  <span class="title">フェス出演（仮）</span>
-                  <span class="place">千葉・海辺ステージ</span>
-                </li>
-                <li>
-                  <span class="date">5/18</span>
-                  <span class="title">新企画配信スタート</span>
-                  <span class="place">YouTube</span>
-                </li>
-                <li>
-                  <span class="date">6/01</span>
-                  <span class="title">イベント司会（仮）</span>
-                  <span class="place">都内</span>
-                </li>
-              </ol>
-              <p class="tiny muted">※ここは静的表示です（送信/予約機能はありません）。</p>
-            </aside>
           </div>
 
           <!-- ===== SNS ===== -->
@@ -367,128 +358,6 @@
                 </a>
               </article>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== GALLERY ===== -->
-      <section id="gallery" class="section section-gallery">
-        <div class="container">
-          <header class="section-head">
-            <h2>おすすめ動画集</h2>
-            <p class="muted">動画は変更可能です。</p>
-          </header>
-
-          <div class="video-grid">
-            <!-- TODO: 6枚のサムネを差し替え（img src） -->
-            <article class="video-card">
-              <a
-                class="video-thumb"
-                href="https://www.youtube.com/watch?v=oShhZ0P8gn0"
-                data-replace="link"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  data-replace="image"
-                  src="https://i.ytimg.com/vi/oShhZ0P8gn0/hqdefault.jpg"
-                  alt="おすすめ動画1"
-                  loading="lazy"
-                />
-                <span class="play" aria-hidden="true"></span>
-                <span class="video-label">おすすめ動画 1</span>
-              </a>
-            </article>
-            <article class="video-card">
-              <a
-                class="video-thumb"
-                href="https://www.youtube.com/watch?v=MiUZDD9gP54"
-                data-replace="link"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  data-replace="image"
-                  src="https://i.ytimg.com/vi/MiUZDD9gP54/hqdefault.jpg"
-                  alt="おすすめ動画2"
-                  loading="lazy"
-                />
-                <span class="play" aria-hidden="true"></span>
-                <span class="video-label">おすすめ動画 2</span>
-              </a>
-            </article>
-            <article class="video-card">
-              <a
-                class="video-thumb"
-                href="https://www.youtube.com/watch?v=a5BzIyqk2bA"
-                data-replace="link"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  data-replace="image"
-                  src="https://i.ytimg.com/vi/a5BzIyqk2bA/hqdefault.jpg"
-                  alt="おすすめ動画3"
-                  loading="lazy"
-                />
-                <span class="play" aria-hidden="true"></span>
-                <span class="video-label">おすすめ動画 3</span>
-              </a>
-            </article>
-            <article class="video-card">
-              <a
-                class="video-thumb"
-                href="https://www.youtube.com/watch?v=LLPR0Py2a8E"
-                data-replace="link"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  data-replace="image"
-                  src="https://i.ytimg.com/vi/LLPR0Py2a8E/hqdefault.jpg"
-                  alt="おすすめ動画4"
-                  loading="lazy"
-                />
-                <span class="play" aria-hidden="true"></span>
-                <span class="video-label">おすすめ動画 4</span>
-              </a>
-            </article>
-            <article class="video-card">
-              <a
-                class="video-thumb"
-                href="https://www.youtube.com/watch?v=mw1y_QBXgK4"
-                data-replace="link"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  data-replace="image"
-                  src="https://i.ytimg.com/vi/mw1y_QBXgK4/hqdefault.jpg"
-                  alt="おすすめ動画5"
-                  loading="lazy"
-                />
-                <span class="play" aria-hidden="true"></span>
-                <span class="video-label">おすすめ動画 5</span>
-              </a>
-            </article>
-            <article class="video-card">
-              <a
-                class="video-thumb"
-                href="https://www.youtube.com/watch?v=9SZiz2B80Xc"
-                data-replace="link"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  data-replace="image"
-                  src="https://i.ytimg.com/vi/9SZiz2B80Xc/hqdefault.jpg"
-                  alt="おすすめ動画6"
-                  loading="lazy"
-                />
-                <span class="play" aria-hidden="true"></span>
-                <span class="video-label">おすすめ動画 6</span>
-              </a>
-            </article>
           </div>
         </div>
       </section>
@@ -773,7 +642,6 @@
     <div class="backdrop" data-backdrop hidden></div>
 
     <script src="./script.js" defer></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 </html>
 
