@@ -14,7 +14,7 @@
       - キャッチコピー: #home の <h1>
       - 画像差し替え: data-replace="image" が付いた <img> の src / alt
       - SNSリンク: data-replace="link" が付いた <a> の href
-      - スケジュール: NEWS の TimeTree 埋め込みを更新
+      - 出演予定: NEWS の TimeTree 埋め込みを更新
       - グッズ: #goods の .product-card を追加/修正
     -->
 
@@ -45,12 +45,12 @@
 
         <nav class="site-nav" id="site-nav" aria-label="グローバルメニュー" data-site-nav>
           <ul>
-            <li><a href="#home" data-nav-link>ホーム</a></li>
+            <li><a href="#home" data-nav-link>HOME</a></li>
             <li><a href="#news" data-nav-link>NEWS</a></li>
-            <li><a href="#profile" data-nav-link>プロフィール</a></li>
-            <li><a href="#schedule" data-nav-link>スケジュール</a></li>
-            <li><a href="#goods" data-nav-link>グッズ</a></li>
-            <li><a href="#contact" data-nav-link>Contact / Booking</a></li>
+            <li><a href="#profile" data-nav-link>PROFILE</a></li>
+            <li><a href="#activity" data-nav-link>ACTIVITY</a></li>
+            <li><a href="#goods" data-nav-link>GOODS</a></li>
+            <li><a href="#contact" data-nav-link>CONTACT</a></li>
           </ul>
         </nav>
       </div>
@@ -87,9 +87,9 @@
 
             <nav class="hero-subnav" aria-label="ページ内の主なセクション">
               <a class="hero-subnav-link" href="#news">NEWS</a>
-              <a class="hero-subnav-link" href="#profile">プロフィール</a>
-              <a class="hero-subnav-link" href="#schedule">スケジュール</a>
-              <a class="hero-subnav-link" href="#goods">グッズ</a>
+              <a class="hero-subnav-link" href="#profile">PROFILE</a>
+              <a class="hero-subnav-link" href="#activity">ACTIVITY</a>
+              <a class="hero-subnav-link" href="#goods">GOODS</a>
             </nav>
           </div>
 
@@ -267,7 +267,7 @@
       </section>
 
       <!-- ===== ACTIVITIES ===== -->
-      <section id="schedule" class="section section-activity">
+      <section id="activity" class="section section-activity">
         <div class="container">
           <header class="section-head">
             <h2>活動紹介</h2>
@@ -595,15 +595,18 @@
                   イベント出演、司会、企画コラボなど、「にこさで盛り上げたい！」という方は、
                   ぜひお気軽にご連絡ください。
                 </p>
-                <p class="muted">
-                  ■ 初めての方へ<br />
-                  出演料は、イベント1本 2,530円（税込）＋交通費等（実費）で承っております。<br />
-                  ※内容や回数によってはご相談も可能です。
-                </p>
+                <div class="trial-price-box">
+                  <p class="trial-price-label">初回お試しプライス</p>
+                  <p class="trial-price-main">にこさで 2,530円（税込）＋交通費（実費）から</p>
+                  <p class="muted">
+                    地域イベント、お祭り、子ども向け企画、司会など、
+                    まずは気軽ににこさを呼んでみませんか？
+                  </p>
+                </div>
                 <p class="muted">
                   🟠 子ども向けイベント・地域密着も大歓迎！<br />
                   まだまだ勉強中の私たちですが、一緒に楽しい時間、あたたかい場所を作っていけたらうれしいです✨<br />
-                  「こんなことできる？」という、ざっくりしたご相談も大歓迎です😘
+                  「こんなことできる？」「予算はこれくらいなんだけど…」というご相談も大歓迎です😘
                 </p>
               </div>
             </aside>
@@ -666,7 +669,7 @@
             >
           </div>
 
-          <a class="privacy" href="#top">プライバシーポリシー（仮）</a>
+          <a class="privacy" href="./privacy.html">プライバシーポリシー</a>
         </div>
       </div>
     </footer>

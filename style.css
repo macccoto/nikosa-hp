@@ -1205,6 +1205,38 @@ textarea {
   font-weight: 900;
 }
 
+.trial-price-box {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 243, 109, 0.9), rgba(255, 163, 90, 0.35));
+  border: 3px dashed rgba(255, 126, 57, 0.45);
+  box-shadow: 0 16px 24px rgba(255, 126, 57, 0.14);
+}
+
+.trial-price-label {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0.55rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-family: "Yomogi", "M PLUS Rounded 1c", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 1000;
+  letter-spacing: 0.04em;
+  transform: rotate(-1.5deg);
+}
+
+.trial-price-main {
+  margin: 0 0 0.45rem;
+  color: var(--navy);
+  font-size: 1.2rem;
+  font-weight: 1000;
+  line-height: 1.6;
+}
+
 .info-row {
   margin-top: 0.7rem;
   display: grid;
@@ -1223,6 +1255,59 @@ textarea {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
+}
+
+/* ===== Privacy ===== */
+.privacy-page {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(255, 243, 109, 0.38), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(255, 183, 213, 0.34), transparent 28%),
+    linear-gradient(180deg, rgba(189, 234, 255, 0.32), rgba(255, 255, 255, 0));
+}
+
+.privacy-container {
+  max-width: 920px;
+}
+
+.privacy-page .section-head h1 {
+  margin: 0;
+  color: var(--navy);
+  font-family: "Yomogi", "M PLUS Rounded 1c", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.2;
+}
+
+.privacy-card {
+  margin-top: 1.8rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.86);
+  border: 3px solid rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-soft);
+}
+
+.privacy-block + .privacy-block {
+  margin-top: 1.35rem;
+  padding-top: 1.35rem;
+  border-top: 2px dashed rgba(36, 48, 111, 0.14);
+}
+
+.privacy-block h2 {
+  margin: 0 0 0.45rem;
+  color: var(--navy);
+  font-size: 1.18rem;
+  font-family: "Yomogi", "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900;
+}
+
+.privacy-block p {
+  margin: 0.45rem 0 0;
+  color: var(--text);
+  line-height: 1.9;
+}
+
+.privacy-updated {
+  margin-top: 1.8rem;
 }
 
 /* ===== Footer ===== */
