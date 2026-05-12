@@ -82,7 +82,7 @@
   };
 
   // 現在位置のメニュー強調（スクロールスパイ）
-  // IntersectionObserver だと #schedule が縦に長く、他セクションへ来ても「スケジュール」のまま残りやすい。
+  // IntersectionObserver だと長いセクションで次のセクションへ来ても前の項目が残りやすい。
   // 固定ヘッダー直下の基準線 Y より「上にある最後のセクション」を現在とみなす。
   const updateActiveNav = () => {
     if (!sections.length) return;

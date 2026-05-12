@@ -116,7 +116,8 @@ a {
 #home,
 #news,
 #profile,
-#schedule,
+#activity,
+#sns,
 #goods,
 #contact {
   scroll-margin-top: calc(var(--header-h) + 12px);
@@ -673,9 +674,13 @@ textarea:focus-visible {
   font-weight: 700;
 }
 
-/* ===== Activity / Schedule / SNS ===== */
+/* ===== Activity / SNS ===== */
 .section-activity {
   background: linear-gradient(180deg, rgba(255, 240, 200, 0.78), rgba(255, 255, 255, 0));
+}
+
+.section-sns {
+  background: linear-gradient(180deg, rgba(189, 234, 255, 0.36), rgba(255, 255, 255, 0));
 }
 
 .activity-layout {
@@ -773,11 +778,6 @@ textarea:focus-visible {
 
 .sns-block {
   margin-top: 1.6rem;
-}
-
-.sns-title {
-  margin: 0 0 0.8rem;
-  font-size: 1.35rem;
 }
 
 .sns-grid {
